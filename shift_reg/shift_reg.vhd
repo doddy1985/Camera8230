@@ -10,6 +10,7 @@ ENTITY shift_reg IS
 			q : OUT STD_LOGIC_VECTOR (3 DOWNTO 0));
 END shift_reg;
 	
+--Comment
 ARCHITECTURE behavioral OF shift_reg IS
 	SIGNAL reg : STD_LOGIC_VECTOR (3 DOWNTO 0);
 	--VARIABLE var: ARRAY(4 DOWNTO 0);
