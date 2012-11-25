@@ -1,0 +1,37 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+-- Serial in parallel out shift reg
+-- with async reset to '0'
+-- and async parellel output load.
+-- Presidence given to reset.
+ENTITY shift_reg IS
+	PORT (s_in, clk, reset, strobe : IN STD_LOGIC;
+			q : OUT STD_LOGIC_VECTOR (3 DOWNTO 0));
+END shift_reg;
+	
+ARCHITECTURE arc OF shift_reg IS
+	SIGNAL reg : STD_LOGIC_VECTOR (3 DOWNTO 0);
+BEGIN
+	-- Serial in latch to parallel out
+	-- Uses strobe line to hold/allow data flow
+	PROCESS (clk, reset)
+	BEGIN
+		-- Async reset
+		IF reset = '1' THEN
+			reg(3) <= '0';
+			reg(2) <= '0';
+			reg(1) <= '0';
+			reg(0) <= '0';
+			q <= reg;
+		END IF;
+		
+		IF clk' EVENT AND clk = '0' AND strobe = '1' THEN
+			reg(3) <= s_in;
+			reg(2) <= reg(3);
+			reg(1) <= reg(2);
+			reg(0) <= reg(1);
+		END IF;
+		q <= reg;
+	END PROCESS;
+END arc;

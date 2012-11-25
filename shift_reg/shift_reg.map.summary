@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Nov 15 20:58:29 2012
+Quartus II Version : 11.0 Build 157 04/27/2011 SJ Web Edition
+Revision Name : shift_reg
+Top-level Entity Name : shift_reg
+Family : Cyclone III
+Total logic elements : 4
+    Total combinational functions : 0
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 8
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

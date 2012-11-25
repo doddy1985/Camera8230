@@ -1,0 +1,16 @@
+|shift_reg
+s_in => reg[3].DATAIN
+clk => reg[0].CLK
+clk => reg[1].CLK
+clk => reg[2].CLK
+clk => reg[3].CLK
+reset => reg[0].ACLR
+reset => reg[1].ACLR
+reset => reg[2].ACLR
+reset => reg[3].ACLR
+strobe => reg[0].ENA
+strobe => reg[1].ENA
+strobe => reg[2].ENA
+strobe => reg[3].ENA
+
+
